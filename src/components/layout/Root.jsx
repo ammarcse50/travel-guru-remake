@@ -4,8 +4,8 @@ import Home from '../pages/Home';
 
 const Root = () => {
     return (
-        <div>
-             <Home></Home>
+        <div className='max-w-[1440px] max-h-[900px] mx-auto'>
+           
              <Outlet></Outlet>
         </div>
     );
