@@ -4,6 +4,7 @@ import img2 from "../../../../public/Sajek.png";
 import img3 from "../../../../public/Sreemongol.png";
 import img4 from "../../../../public/sundorbon.png";
 import img5 from "../../../../public/Rectangle 26.png";
+import Navbar from "../Navbar/Navbar";
 
 const Header = () => {
   return (
@@ -11,7 +12,9 @@ const Header = () => {
       className="hero min-h-screen "
       style={{ backgroundImage: `url(${img1})` }}
     >
+       
       <div className="hero-overlay bg-opacity-60"></div>
+       
       <div className="w-1/2  ml-80">
         <div className="-ml-96 text-left">
           <h1 className="mb-5 text-5xl font-bold">COX'S BAZAR</h1>
