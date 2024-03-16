@@ -2,6 +2,8 @@ import React from "react";
 
 import logo from "../../../../public/logo.png";
 import { FaSearch } from "react-icons/fa";
+import Search from "../../pages/search/Search";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const navlinks = (
     <>
@@ -13,7 +15,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="absolute flex space-x-64 mt-8 text-white font-montserrat">
+    <div className="absolute flex gap-x-[500px] mt-8 text-white font-montserrat">
       <div className="ml-36">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -119,20 +121,11 @@ const Navbar = () => {
       </div>
 
       <div className="flex gap-10 items-center">
-        <FaSearch className="absolute ml-5"></FaSearch>
-        <input
-          type="text"
-          placeholder="Search your Destination"
-          className="input input-bordered border-white  md:w-[370px] w-auto bg-transparent text-white placeholder-white pl-12"
-        />
-
-  <div className="flex  gap-3">
-        <ul className="p-2 flex gap-8">{navlinks}</ul>
-      <button className="btn bg-[#F9A51A] text-black ">Login</button>
-      </div>  
-
+        <div className="flex  gap-3">
+          <ul className="p-2 flex gap-8">{navlinks}</ul>
+     <Link to="/login"><button className="btn bg-[#F9A51A] text-black ">Login</button></Link>     
+        </div>
       </div>
-    
     </div>
   );
 };

@@ -1,12 +1,18 @@
 import React, { useContext } from 'react';
+import { AuthContext } from '../components/shared/AuthProvider/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
-const PrivateRoutes = () => {
+const PrivateRoutes = ({children}) => {
+           
+           const {user}= useContext(AuthContext)
 
-    return (
-        <div>
-            
-        </div>
-    );
+           const Navigate= useNavigate();
+
+    if(user)
+    {
+        return children
+    }
+    return <Navigate to="/login"> </Navigate>
 };
 
 export default PrivateRoutes;

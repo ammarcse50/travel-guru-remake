@@ -1,15 +1,44 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 const Login = () => {
-  return (
+  const { user, signInUser } = useContext(AuthContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const form = new FormData(e.currentTarget);
+
+    const email = form.get("email");
+
+    const password = form.get("password");
+
+    signInUser(email, password)
+      .then((result) => {
+        console.log("login successfull", result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  return (     
     <div className="">
-      <form className="card-body w-[570px] mx-auto">
-        <div className="form-control">
+
+     <Navbar></Navbar>
+       
+ 
+      
+      <form onSubmit={handleLogin} className="card-body w-[570px] mx-auto  ">
+        
+        <div className="form-control mt-32">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
           <input
             type="email"
+            name="email"
             placeholder="email"
             className="input input-bordered"
             required
@@ -21,6 +50,7 @@ const Login = () => {
           </label>
           <input
             type="password"
+            name="password"
             placeholder="password"
             className="input input-bordered"
             required
@@ -32,16 +62,17 @@ const Login = () => {
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Register</button>
+          <button className="btn text-black bg-[#F9A51A]">Login</button>
         </div>
       </form>
-      <p>
-        Already Registered?{" "}
-        <Link className="text-blue-600 font-bold" to="/login">
-          Login!{" "}
+      <p className="text-center">
+       Don't Have An Account ?{" "}
+        <Link className="text-yellow-600 font-bold" to="/register">
+          please Register!{" "}
         </Link>{" "}
       </p>
     </div>
+    
   );
 };
 

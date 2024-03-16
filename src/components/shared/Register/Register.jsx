@@ -1,17 +1,57 @@
-import React from "react";
+
+
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { TbBrandFacebookFilled } from "react-icons/tb";
+import  { AuthContext } from "../AuthProvider/AuthProvider";
+import Navbar from "../Navbar/Navbar";
+ 
+ 
 
 const Register = () => {
+
+    const {user,createUser} = useContext(AuthContext)
+
+    
+     const  handleRegister = e =>{
+
+        e.preventDefault();
+
+            const form = new FormData(e.currentTarget)
+              
+            const firstName = form.get('firstName')
+             const LastName = form.get('lastName')
+            const email = form.get('email')
+            const password = form.get( 'password')
+           
+  
+       console.log(firstName,LastName,email,password)
+
+ createUser(email,password).
+        then(result=>{
+            console.log('successfully created account',result.user)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+     }
+     
+
+   
+       
+
+
+
   return (
     <div className="">
-      <form className="card-body w-[570px] mx-auto">
-        <div className="form-control">
+         <Navbar></Navbar>
+      <form onSubmit={handleRegister} className="card-body w-[570px] mx-auto">
+        <div className="form-control mt-32">
           <label className="label">
             <span className="label-text">First Name</span>
           </label>
           <input
-            type="email"
+            type="name"
+            name="firstName"
             placeholder="First Name"
             className="input input-bordered"
             required
@@ -22,7 +62,8 @@ const Register = () => {
             <span className="label-text">Last Name</span>
           </label>
           <input
-            type="email"
+            type="name"
+            name="lastName"
             placeholder="Last Name"
             className="input input-bordered"
             required
@@ -35,7 +76,8 @@ const Register = () => {
           </label>
           <input
             type="email"
-            placeholder="email"
+            name ="email"
+            placeholder="Email"
             className="input input-bordered"
             required
           />
@@ -46,6 +88,7 @@ const Register = () => {
           </label>
           <input
             type="password"
+            name="password"
             placeholder="password"
             className="input input-bordered"
             required
@@ -106,8 +149,8 @@ const Register = () => {
         </span>
       </Link>
 
-      <Link className=" flex justify-center mt-3 ">
-        <span className="border flex items-center rounded-xl px-5 py-1">
+      <Link className=" flex justify-center mt-3 mb-3">
+        <span className="border flex items-center rounded-xl px-5 py-1 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
