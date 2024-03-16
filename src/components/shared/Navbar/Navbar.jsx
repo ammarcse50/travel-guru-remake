@@ -118,11 +118,12 @@ const Navbar = () => {
         </svg>
       </div>
 
-      <div className="flex gap-10">
+      <div className="flex gap-10 items-center">
+        <FaSearch className="absolute ml-5"></FaSearch>
         <input
           type="text"
           placeholder="Search your Destination"
-          className="input input-bordered border-white  md:w-[370px]  bg-transparent text-white"
+          className="input input-bordered border-white  md:w-[370px] w-auto bg-transparent text-white placeholder-white pl-12"
         />
 
   <div className="flex  gap-3">
