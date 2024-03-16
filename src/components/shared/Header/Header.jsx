@@ -30,16 +30,16 @@ const Header = () => {
 
       <div className="ml-[700px] mt-56">
         <div className="carousel w-full gap-7">
-          <div id="slide1" className="carousel-item relative ">
-            <img src={img2} className="w-[270px] h-[416px]" />
+          <div id="slide1" className="carousel-item relative  ">
+            <img src={img2} className="w-[270px] h-[416px] hover:border-8   border-yellow-500 rounded-3xl " />
           
           </div>
           <div id="slide2" className="carousel-item relative">
-            <img src={img3} className="w-[270px] h-[416px]" />
+            <img src={img3} className="w-[270px] h-[416px] hover:border-8   border-yellow-500 rounded-3xl" />
           
           </div>
           <div id="slide3" className="carousel-item relative w-full">
-            <img src={img4} className="w-[270px] h-[416px]" />
+            <img src={img4} className="w-[270px] h-[416px] hover:border-8   border-yellow-500 rounded-3xl" />
           
           </div>
        
