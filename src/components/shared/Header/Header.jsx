@@ -25,7 +25,7 @@ const Header = () => {
             <br />
             its long natural sandy beach, and it ...
           </p>
-          <button className="btn btn-primary">
+          <button className="btn bg-[#F9A51A] text-black ">
             Booking <FaArrowRight />
           </button>
         </div>
