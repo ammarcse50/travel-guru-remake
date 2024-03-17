@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <div className="absolute flex gap-x-[500px] mt-8 text-white font-montserrat">
-      <div className="ml-36">
+     <Link to="/"> <div className="ml-36" >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="121"
@@ -118,7 +118,7 @@ const Navbar = () => {
             </clipPath>
           </defs>
         </svg>
-      </div>
+      </div></Link>
 
       <div className="flex gap-10 items-center">
         <div className="flex  gap-3">
