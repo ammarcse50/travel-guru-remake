@@ -7,7 +7,17 @@ import img5 from "../../../../public/Rectangle 26.png";
 import Navbar from "../Navbar/Navbar";
 
 const Header = () => {
-  const handleBooking = () => {};
+  const handleBooking = () => {
+
+      const elementCarousel =  document.querySelector('.carousel')
+       const elementArrow = document.querySelector('.slider-arrow')
+       const elementTicketBox= document.querySelector('.ticketBox')
+
+      elementCarousel.classList.add('hidden')  
+      elementArrow.classList.add('hidden')
+      elementTicketBox.classList.remove('hidden')
+    
+  };
 
   return (
     <div
@@ -34,6 +44,46 @@ const Header = () => {
           </button>
         </div>
       </div>
+                                         {/* TicketBox  */}
+
+
+                                         
+       <div className="ml-96 hidden ticketBox">
+       <form className="card-body bg-white">
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">origin</span>
+          </label>
+          <input type="name" placeholder="origin" className="input input-bordered text-black bg-gray-300" required />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Destination</span>
+          </label>
+          <input type="password" placeholder="Destination" className="input input-bordered text-black bg-gray-300" required />
+        
+        </div>
+        <div className=" flex gap-3">
+        <div>  <label className="label">
+            <span className="label-text">From</span>
+          </label>
+          <input type="date" placeholder="Destination" className="input input-bordered text-black bg-gray-300" required /></div>
+          <div>
+          <label className="label">
+            <span className="label-text">To</span>
+          </label>
+          <input type="date" placeholder="Destination" className="input input-bordered text-black bg-gray-300" required />
+          </div>
+        
+        </div>
+         
+        <div className="form-control mt-6">
+          <button className="btn bg-[#F9A51A] text-black">Start Booking</button>
+        </div>
+      </form>
+       </div>
+                            
+                 {/* Carousel */}
 
       <div className="ml-[700px]  carousel">
         <div className="carousel w-full gap-7">
@@ -57,7 +107,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="mt-[600px] flex  transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <div className="mt-[600px] slider-arrow flex  transform -translate-y-1/2 left-5 right-5 top-1/2">
         <a href="#slide1" className="btn bg-white text-black btn-circle">
           ❮
         </a>
